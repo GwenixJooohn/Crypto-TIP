@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gweni&John – Crypto Tip Jar</title>
+  <style>
+    :root{
+      --bg:#0b0b10; --card:#14141c; --text:#f6f6f9; --muted:#a9abb6; --accent:#7c5cff; --accent2:#00e0a4;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji"; background:radial-gradient(1200px 800px at 80% -10%, #1a1430 0%, transparent 60%), var(--bg); color:var(--text);}
+    .wrap{max-width:960px; margin-inline:auto; padding:48px 20px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:48px; height:48px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#3b82f6); display:grid; place-items:center; font-weight:800}
+    h1{font-size:clamp(22px,4vw,32px); margin:0}
+    p.sub{margin:.25rem 0 0; color:var(--muted)}
+    .card{margin-top:28px; background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.06); border-radius:20px; padding:22px}
+    .coins{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
+    .tile{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; display:flex; flex-direction:column; gap:12px}
+    .row{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .tag{font-size:12px; color:#cfd2dc; padding:4px 8px; border:1px solid rgba(255,255,255,.12); border-radius:999px}
+    .addr{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; word-break:break-all; font-size:13px; color:#e7e9ef}
+    button.btn{cursor:pointer; border:0; border-radius:12px; padding:10px 12px; font-weight:700; color:#0b0b10; background:linear-gradient(135deg,var(--accent2),#7c5cff); transition:transform .08s ease}
+    button.btn:hover{transform:translateY(-1px)}
+    .btns{display:flex; gap:10px; flex-wrap:wrap}
+    .ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.14)}
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+    .notice{background:#172033; border:1px solid rgba(255,255,255,.08); padding:14px; border-radius:14px; margin-top:18px; font-size:13px; color:#c7d2fe}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GJ</div>
+        <div>
+          <h1>Gweni&John – Crypto Tip Jar</h1>
+          <p class="sub">Danke fürs Supporten! Wähle deine Lieblings‑Coin – Link öffnet direkt deine Wallet‑App.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="coins">
+        <!-- BTC -->
+        <div class="tile">
+          <div class="row">
+            <strong>Bitcoin</strong>
+            <span class="tag">BTC</span>
+          </div>
+          <div class="addr" id="addr-btc">bc1q3w8p72l8sxsendu5rxyp4jr8s4tx89v7l50928</div>
+          <div class="btns">
+            <a class="btn" href="bitcoin:bc1q3w8p72l8sxsendu5rxyp4jr8s4tx89v7l50928" target="_blank" rel="noopener">
+              <button class="btn">Tip in BTC</button>
+            </a>
+            <button class="btn ghost" data-copy="#addr-btc">Copy address</button>
+          </div>
+        </div>
+        <!-- ETH -->
+        <div class="tile">
+          <div class="row">
+            <strong>Ethereum</strong>
+            <span class="tag">ETH</span>
+          </div>
+          <div class="addr" id="addr-eth">0x6379a6c3a188D376B14b5fB47E7a3daaDe62343</div>
+          <div class="btns">
+            <a class="btn" href="ethereum:0x6379a6c3a188D376B14b5fB47E7a3daaDe62343" target="_blank" rel="noopener">
+              <button class="btn">Tip in ETH</button>
+            </a>
+            <button class="btn ghost" data-copy="#addr-eth">Copy address</button>
+          </div>
+        </div>
+        <!-- USDT TRC20 (TRON) -->
+        <div class="tile">
+          <div class="row">
+            <strong>Tether (TRC20)</strong>
+            <span class="tag">USDT • TRON</span>
+          </div>
+          <div class="addr" id="addr-trc">TVSiL62gJZzQ2eUVcxUR5Ct7VqtvALLND7</div>
+          <div class="btns">
+            <a class="btn" href="tron:TVSiL62gJZzQ2eUVcxUR5Ct7VqtvALLND7" target="_blank" rel="noopener">
+              <button class="btn">Tip in USDT (TRC20)</button>
+            </a>
+            <button class="btn ghost" data-copy="#addr-trc">Copy address</button>
+          </div>
+        </div>
+        <!-- SOL -->
+        <div class="tile">
+          <div class="row">
+            <strong>Solana</strong>
+            <span class="tag">SOL</span>
+          </div>
+          <div class="addr" id="addr-sol">CGw8vKSA56aXMNeLDM2dKk7ZtDC99ZAZfSYL8Vvgibog</div>
+          <div class="btns">
+            <a class="btn" href="solana:CGw8vKSA56aXMNeLDM2dKk7ZtDC99ZAZfSYL8Vvgibog" target="_blank" rel="noopener">
+              <button class="btn">Tip in SOL</button>
+            </a>
+            <button class="btn ghost" data-copy="#addr-sol">Copy address</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice">⚠️ Sende nur die passende Coin auf die angegebene Chain (z. B. USDT <em>nur</em> auf TRON/TRC20). Tokens auf der falschen Chain sind verloren.</div>
+    </section>
+
+    <footer>
+      <p>© Gweni&John • Much love 💜</p>
+    </footer>
+  </div>
+
+  <script>
+    // copy-to-clipboard
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const sel = btn.getAttribute('data-copy');
+        const el = document.querySelector(sel);
+        if(!el) return;
+        const text = el.textContent.trim();
+        navigator.clipboard.writeText(text).then(()=>{
+          const old = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(()=>btn.textContent = old, 1200);
+        });
+      })
+    })
+  </script>
+</body>
+</html>
